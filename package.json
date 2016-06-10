@@ -1,12 +1,12 @@
 {
   "name": "sandbox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Run some example testcases, or use this as a seed to start writing your own.",
   "scripts": {
     "start": "eslint testcase.js && node testcase.js",
     "test": "eslint main.js ./examples/** && npm run 001_simple && npm run 002_ticket",
-    "001_simple" : "node ./examples/001_simple.js",
-    "002_ticket" : "node ./examples/002_ticket.js",
+    "001_simple": "node ./examples/001_simple.js",
+    "002_ticket": "node ./examples/002_ticket.js",
     "clean": "rimraf node_modules"
   },
   "author": "",

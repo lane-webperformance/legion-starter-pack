@@ -1,6 +1,6 @@
 {
   "name": "sandbox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "command-line-args": {
       "version": "3.0.0",
