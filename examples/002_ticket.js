@@ -50,6 +50,6 @@ L.create()
     .chain(rest.post(host + '/ticket/new'))
     .chain(assertSuccess)
     .chain(response => rest.post(host + '/ticket/redeem?ticket='+ response.json.ticket))
-    .chain(assertSuccess));
+    .chain(assertSuccess))
 
   .main();

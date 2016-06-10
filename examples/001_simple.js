@@ -34,7 +34,7 @@ L.create()
   // The testcase itself.
   .testcase(L.of()
       .chain(fetch.text(host))           //this will succeed
-      .chain(fetch.text(secure_host)));  //this will fail
+      .chain(fetch.text(secure_host)))   //this will fail
 
-// Run the testcase according to the command line arguments.     
+  // Run the testcase according to the command line arguments.     
   .main();
