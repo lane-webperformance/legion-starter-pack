@@ -1,5 +1,5 @@
 
-legion-example-pack
+legion-starter-pack
 -------------------
 
 This is a "batteries included" npm package, shrinkwrapped with a stable build
