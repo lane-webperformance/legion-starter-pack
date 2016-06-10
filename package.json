@@ -1,12 +1,12 @@
 {
   "name": "sandbox",
-  "version": "1.0.0",
-  "description": "Some example testcases, written with Legion.",
+  "version": "0.0.1",
+  "description": "Run some example testcases, or use this as a seed to start writing your own.",
   "scripts": {
-    "start": "node main.js",
+    "start": "eslint testcase.js && node testcase.js",
     "test": "eslint main.js ./examples/** && npm run 001_simple && npm run 002_ticket",
-    "001_simple" : "node main.js ./examples/001_simple -n 25",
-    "002_ticket" : "node main.js ./examples/002_ticket -n 25",
+    "001_simple" : "node ./examples/001_simple.js",
+    "002_ticket" : "node ./examples/002_ticket.js",
     "clean": "rimraf node_modules"
   },
   "author": "",
@@ -14,7 +14,7 @@
   "dependencies": {
     "command-line-args": "^3.0.0",
     "command-line-usage": "^3.0.1",
-    "legion": "git+https://github.com/lane-webperformance/legion.git#v0.0.12",
+    "legion": "git+https://github.com/lane-webperformance/legion.git#v0.0.13",
     "legion-io-fetch": "git+https://github.com/lane-webperformance/legion-io-fetch.git#v0.0.7",
     "legion-obstacle-course": "git+https://github.com/lane-webperformance/legion-obstacle-course.git#v0.0.6"
   },

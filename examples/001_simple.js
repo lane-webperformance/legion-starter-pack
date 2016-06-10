@@ -13,28 +13,28 @@ const obstacle = require('legion-obstacle-course');
 const L = require('legion');
 const fetch = require('legion-io-fetch');
 
-module.exports = function() {
-  const port = 8500;
-  const host = 'http://localhost:' + port;
-  const secure_host = 'https://localhost:' + port;
-  let server = null;
+const port = 8500;
+const host = 'http://localhost:' + port;
+const secure_host = 'https://localhost:' + port;
+let server = null;
 
-  return L.create()
+L.create()
 
-    // Set up the obstacle course server before the test.
-    .before(() => {
-      server = obstacle.listen(port);
-    })
+  // Set up the obstacle course server before the test.
+  .before(() => {
+    server = obstacle.listen(port);
+  })
 
-    // Take down the server after the test.
-    .after(() => {
-      server.close();
-      server = null;
-    })
+  // Take down the server after the test.
+  .after(() => {
+    server.close();
+    server = null;
+  })
 
-    // The testcase itself.
-    .testcase(L.of()
-        .chain(fetch.text(host))           //this will succeed
-        .chain(fetch.text(secure_host)));  //this will fail
-};
-     
+  // The testcase itself.
+  .testcase(L.of()
+      .chain(fetch.text(host))           //this will succeed
+      .chain(fetch.text(secure_host)));  //this will fail
+
+// Run the testcase according to the command line arguments.     
+  .main();
