@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 
-// Note: if you don't like the eslint warnings, just delete .eslintrc.json.
-
 'use strict';
 
-const L = require('legion');
+require('./uptime');
+
 const fetch = require('legion-io-fetch');
+const L = require('legion');
 
 L.create()
 
