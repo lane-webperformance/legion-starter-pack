@@ -5,6 +5,7 @@
 require('./uptime');
 
 const fetch = require('legion-io-fetch');
+const delay = require('legion-io-delay');
 const L = require('legion');
 
 L.create()
@@ -16,7 +17,9 @@ L.create()
   .after(() => undefined)
 
   // Define the testcase.
-  .testcase(fetch.text('http://www.example.com')
+  .testcase(L.of()
+    .chain(() => delay(Math.random()))
+    .chain(fetch.text('http://www.example.com'))
     .chain(() => console.log('Edit this to load your web site.')))
 
   .main();

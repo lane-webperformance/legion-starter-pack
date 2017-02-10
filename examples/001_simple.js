@@ -12,6 +12,7 @@
 const obstacle = require('legion-obstacle-course');
 const L = require('legion');
 const fetch = require('legion-io-fetch');
+const delay = require('legion-io-delay');
 
 const port = 8500;
 const host = 'http://localhost:' + port;
@@ -33,7 +34,9 @@ L.create()
 
   // The testcase itself.
   .testcase(L.of()
+      .chain(() => delay(Math.random()))
       .chain(fetch.text(host))           //this will succeed
+      .chain(() => delay(Math.random()))
       .chain(fetch.text(secure_host)))   //this will fail
 
   // Run the testcase according to the command line arguments.     

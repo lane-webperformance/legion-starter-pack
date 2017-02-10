@@ -22,18 +22,10 @@ To write your own testcase . . .
 
 . . . just edit testcase.js and run:
 
-	npm start
-
--or-
-
 	node testcase.js
 
 This will run the testcase with only one concurrent user. To run with many
 users (say, 50), try:
-
-	npm start -- -n 50
-
--or-
 
 	node testcase.js -n 50
 

@@ -11,6 +11,7 @@
 const obstacle = require('legion-obstacle-course');
 const L = require('legion');
 const rest = require('legion-io-fetch').rest;
+const delay = require('legion-io-delay');
 
 /*
  * Validate that a response was successful. Without this call,
@@ -47,8 +48,10 @@ L.create()
   })
 
   .testcase(L.of()
+    .chain(() => delay(Math.random()))
     .chain(rest.post(host + '/ticket/new'))
     .chain(assertSuccess)
+    .chain(response => { delay(Math.random()); return response; })
     .chain(response => rest.post(host + '/ticket/redeem?ticket='+ response.json.ticket))
     .chain(assertSuccess))
 
