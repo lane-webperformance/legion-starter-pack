@@ -1,6 +1,6 @@
 {
   "name": "legion-starter-pack",
-  "version": "0.0.5",
+  "version": "0.0.20",
   "dependencies": {
     "accepts": {
       "version": "1.3.3",
