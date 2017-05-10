@@ -3,8 +3,8 @@
   "version": "0.0.20",
   "description": "Run some example testcases, or use this as a seed to start writing your own.",
   "scripts": {
-    "start": "eslint testcase.js && node testcase.js",
-    "test": "eslint testcase.js ./examples/** && ./run-examples",
+    "start": "node testcase.js",
+    "test": "eslint testcase.js ./examples/** && ./testcase.js && ./run-examples",
     "clean": "rimraf node_modules"
   },
   "author": "",
@@ -12,10 +12,10 @@
   "dependencies": {
     "command-line-args": "^4.0.1",
     "command-line-usage": "^4.0.0",
-    "legion": "git+https://github.com/lane-webperformance/legion.git#v0.0.28",
-    "legion-io-fetch": "git+https://github.com/lane-webperformance/legion-io-fetch.git#v0.0.28",
-    "legion-io-delay": "git+https://github.com/lane-webperformance/legion-io-delay.git#v0.0.28",
-    "legion-obstacle-course": "git+https://github.com/lane-webperformance/legion-obstacle-course.git#v0.0.28"
+    "legion": "https://github.com/lane-webperformance/legion#v0.0.28",
+    "legion-io-fetch": "https://github.com/lane-webperformance/legion-io-fetch#v0.0.28",
+    "legion-io-delay": "https://github.com/lane-webperformance/legion-io-delay#v0.0.28",
+    "legion-obstacle-course": "https://github.com/lane-webperformance/legion-obstacle-course#v0.0.28"
   },
   "devDependencies": {
     "eslint": "^3.15.0",

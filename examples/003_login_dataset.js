@@ -37,7 +37,7 @@ function assertSuccess(response) {
 /*
  * Set of valid Login IDs.
  */
-const LOGIN_IDS = ["hello1","ajmurray","joe@example.com","sue@example.com","testaccount1","testaccount2","testaccount3","testaccount4","testaccount5"];
+const LOGIN_IDS = ['hello1','ajmurray','joe@example.com','sue@example.com','testaccount1','testaccount2','testaccount3','testaccount4','testaccount5'];
 
 // Configuration for the test server.
 const port = 8500;
