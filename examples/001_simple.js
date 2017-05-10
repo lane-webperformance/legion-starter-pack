@@ -1,12 +1,16 @@
+#!/usr/bin/env node
 'use strict';
 
 /*
- * This testcase makes a HTTP GET request to the Legion Obstacle Course
- * test server, followed by second HTTPS request.
+ * This example makes a HTTP GET request to the Legion Obstacle Course
+ * test server, followed by an HTTPS (secure) request.
  * 
- * The HTTPS request will fail because this server is not configured to
- * accept HTTPS traffic. I've intentionally included this failure for
+ * The secure request will fail because the server will not be configured to
+ * accept secure HTTPS traffic. I've intentionally included this failure for
  * illustrative purposes. It will be reported in the test results.
+ *
+ * This example demonstrates the basic ability to make requests to a server,
+ * collect statistics about server performance, and recognize failures.
  */
 
 const obstacle = require('legion-obstacle-course');
@@ -22,21 +26,21 @@ let server = null;
 L.create()
 
   // Set up the obstacle course server before the test.
-  .before(() => {
+  .withBeforeTestAction(() => {
     server = obstacle.listen(port);
   })
 
   // Take down the server after the test.
-  .after(() => {
+  .withAfterTestAction(() => {
     server.close();
     server = null;
   })
 
   // The testcase itself.
-  .testcase(L.of()
-      .chain(() => delay(Math.random()))
+  .withTestcase(L.of()
+      .chain(delay(0,1))
       .chain(fetch.text(host))           //this will succeed
-      .chain(() => delay(Math.random()))
+      .chain(delay(0,1))
       .chain(fetch.text(secure_host)))   //this will fail
 
   // Run the testcase according to the command line arguments.     

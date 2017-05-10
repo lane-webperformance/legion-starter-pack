@@ -1,11 +1,15 @@
+#!/usr/bin/env node
 'use strict';
 
 /*
- * This testcase makes a series of calls to the 'ticket' app
+ * This example makes a series of calls to the 'ticket' app
  * on the legion-obstacle-course test server. The ticket app
  * is a trivial JSON API where we can request a ticket
  * with a random unique ID, and later "redeem" the same ticket
  * by submitting that ID.
+ *
+ * This example demonstrates the ability to extract a value from
+ * a previous response and use it in a subsequent request.
  */
 
 const obstacle = require('legion-obstacle-course');
@@ -38,16 +42,16 @@ let server = null;
 
 L.create()
 
-  .before(() => {
+  .withBeforeTestAction(() => {
     server = obstacle.listen(port);
   })
 
-  .after(() => {
+  .withAfterTestAction(() => {
     server.close();
     server = null;
   })
 
-  .testcase(L.of()
+  .withTestcase(L.of()
     .chain(() => delay(Math.random()))
     .chain(rest.post(host + '/ticket/new'))
     .chain(assertSuccess)
