@@ -1,5 +1,14 @@
 #!/bin/bash
 
-node ./examples/001_simple.js || exit 1
+node ./examples/001_simple.js && exit 1 # This test is expected to generate errors.
+echo "Note: the previous test is expected to generate errors."
+echo "Ok."
+sleep 5
+
 node ./examples/002_ticket.js || exit 2
+echo "Ok."
+sleep 5
+
 node ./examples/003_login_dataset.js || exit 3
+echo "Ok."
+sleep 5
