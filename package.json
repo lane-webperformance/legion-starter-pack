@@ -15,7 +15,9 @@
     "legion": "https://github.com/lane-webperformance/legion#v0.0.39",
     "legion-io-fetch": "https://github.com/lane-webperformance/legion-io-fetch#v0.0.39",
     "legion-io-delay": "https://github.com/lane-webperformance/legion-io-delay#v0.0.39",
-    "legion-obstacle-course": "https://github.com/lane-webperformance/legion-obstacle-course#v0.0.39"
+    "legion-obstacle-course": "https://github.com/lane-webperformance/legion-obstacle-course#v0.0.39",
+    "legion-control": "https://github.com/lane-webperformance/legion-control#v0.0.39",
+    "legion-capture": "https://github.com/lane-webperformance/legion-capture#v0.0.39"
   },
   "devDependencies": {
     "eslint": "^3.15.0",
