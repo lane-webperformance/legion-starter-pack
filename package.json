@@ -12,10 +12,10 @@
   "dependencies": {
     "command-line-args": "^4.0.1",
     "command-line-usage": "^4.0.0",
-    "legion": "https://github.com/lane-webperformance/legion#v0.0.38",
-    "legion-io-fetch": "https://github.com/lane-webperformance/legion-io-fetch#v0.0.38",
-    "legion-io-delay": "https://github.com/lane-webperformance/legion-io-delay#v0.0.38",
-    "legion-obstacle-course": "https://github.com/lane-webperformance/legion-obstacle-course#v0.0.38"
+    "legion": "https://github.com/lane-webperformance/legion#v0.0.39",
+    "legion-io-fetch": "https://github.com/lane-webperformance/legion-io-fetch#v0.0.39",
+    "legion-io-delay": "https://github.com/lane-webperformance/legion-io-delay#v0.0.39",
+    "legion-obstacle-course": "https://github.com/lane-webperformance/legion-obstacle-course#v0.0.39"
   },
   "devDependencies": {
     "eslint": "^3.15.0",
