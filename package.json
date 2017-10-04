@@ -17,7 +17,8 @@
     "legion-io-delay": "https://github.com/lane-webperformance/legion-io-delay#v0.0.42",
     "legion-obstacle-course": "https://github.com/lane-webperformance/legion-obstacle-course#v0.0.42",
     "legion-control": "https://github.com/lane-webperformance/legion-control#v0.0.42",
-    "legion-capture": "https://github.com/lane-webperformance/legion-capture#v0.0.42"
+    "legion-capture": "https://github.com/lane-webperformance/legion-capture#v0.0.42",
+    "legion-selenium-webdriver": "https://github.com/lane-webperformance/legion-selenium-webdriver#v0.0.42"
   },
   "devDependencies": {
     "eslint": "^3.15.0",
