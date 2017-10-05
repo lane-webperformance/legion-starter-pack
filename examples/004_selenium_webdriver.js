@@ -35,9 +35,9 @@ L.create()
     .chain(delay(5,10))
     .chain(Driver.findElement(By.id('left')).click())
     .chain(Driver.findElement(By.id('left')).getText())
-    .chain(text => assertEquals('meep!'))
+    .chain(assertEquals('meep!'))
     .chain(Driver.findElement(By.id('right')).getText())
-    .chain(text => assertEquals('Right'))
+    .chain(assertEquals('Right'))
     .chain(delay(5,10)))
   .main();
 
