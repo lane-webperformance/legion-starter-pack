@@ -39,26 +39,14 @@ function assertSuccess(response) {
  */
 const LOGIN_IDS = ['hello1','ajmurray','joe@example.com','sue@example.com','testaccount1','testaccount2','testaccount3','testaccount4','testaccount5'];
 
-// Configuration for the test server.
-const port = 8500;
-const host = 'http://localhost:' + port;
-let server = null;
-
 L.create()
 
-  .withBeforeTestAction(() => {
-    server = obstacle.listen(port);
-  })
-
-  .withAfterTestAction(() => {
-    server.close();
-    server = null;
-  })
+  .using(obstacle)
 
   .withTestcase(L.of()
     .chain(delay(1,2))
     .chain(L.getCounters('login-ids', 1))
     .chain(i => LOGIN_IDS[i.from])
-    .chain(login_id => rest.post(host + '/login?' + querystring.stringify({id: login_id})))
+    .chain(login_id => rest.post(obstacle.host + '/login?' + querystring.stringify({id: login_id})))
     .chain(assertSuccess))
   .main();

@@ -18,30 +18,16 @@ const L = require('legion');
 const fetch = require('legion-io-fetch');
 const delay = require('legion-io-delay');
 
-const port = 8500;
-const host = 'http://localhost:' + port;
-const secure_host = 'https://localhost:' + port;
-let server = null;
-
 L.create()
 
-  // Set up the obstacle course server before the test.
-  .withBeforeTestAction(() => {
-    server = obstacle.listen(port);
-  })
-
-  // Take down the server after the test.
-  .withAfterTestAction(() => {
-    server.close();
-    server = null;
-  })
+  .using(obstacle)
 
   // The testcase itself.
   .withTestcase(L.of()
       .chain(delay(0,1))
-      .chain(fetch.text(host))           //this will succeed
+      .chain(fetch.text('http://localhost:' + obstacle.port + '/'))           //this will succeed
       .chain(delay(0,1))
-      .chain(fetch.text(secure_host)))   //this will fail
+      .chain(fetch.text('https://localhost:' + obstacle.port + '/')))         //this will fail because the obstacle course doesn't implement HTTPS
 
   // Run the testcase according to the command line arguments.     
   .main();

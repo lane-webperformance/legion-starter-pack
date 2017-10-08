@@ -35,28 +35,16 @@ function assertSuccess(response) {
   return response;
 }
 
-// Configuration for the test server.
-const port = 8500;
-const host = 'http://localhost:' + port;
-let server = null;
-
 L.create()
 
-  .withBeforeTestAction(() => {
-    server = obstacle.listen(port);
-  })
-
-  .withAfterTestAction(() => {
-    server.close();
-    server = null;
-  })
+  .using(obstacle)
 
   .withTestcase(L.of()
-    .chain(() => delay(Math.random()))
-    .chain(rest.post(host + '/ticket/new'))
+    .chain(delay(0,1))
+    .chain(rest.post(obstacle.host + '/ticket/new'))
     .chain(assertSuccess)
-    .chain(response => { delay(Math.random()); return response; })
-    .chain(response => rest.post(host + '/ticket/redeem?ticket='+ response.json.ticket))
+    .chain(response => delay(0,1).chain(() => response))
+    .chain(response => rest.post(obstacle.host + '/ticket/redeem?ticket=' + response.json.ticket))
     .chain(assertSuccess))
 
   .main();
