@@ -1,20 +1,15 @@
 #!/usr/bin/env node
-
 'use strict';
-
 const L = require('legion');
 const delay = require('legion-io-delay');
+const obstacle = require('legion-obstacle-course');
 const webdriver = require('legion-selenium-webdriver');
+
 const By = webdriver.By;
 const Driver = webdriver.Driver;
-
-const obstacle = require('legion-obstacle-course');
-
 L.create()
-
   .using(obstacle)
   .using(webdriver.init(new webdriver.Builder().forBrowser('firefox')))
-
   .withTestcase(L.of()
     .chain(delay(5,10))
     .chain(Driver.get(obstacle.host + '/static'))
