@@ -10,9 +10,7 @@ documentation: docs/generated examples.js
 
 docs/generated:
 	mkdir -p ./docs/generated
-	mkdir -p ./docs/generated/docco
-	cp ./examples.md/*.md ./docs/generated
-	npx docco ./examples.md/*.md --output ./docs/generated/docco
+	npx docco ./examples.md/*.md --output ./docs/generated
 
 examples.js:
 	mkdir -p ./examples.js

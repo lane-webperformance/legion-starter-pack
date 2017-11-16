@@ -15,7 +15,7 @@ documentation to help you succeed.
 What are you trying to do?
 ==========================
 
-[Example 1](./generated/001_simple.js.md): Create a basic testcase with HTTP get requests.
+[Example 1](./generated/001_simple.js.md): Create a basic testcase with HTTP GET requests.
 
 [Example 2](./generated/002_ticket.js.md): Reuse a value from previous HTTP response in a later HTTP request.
 
@@ -23,4 +23,3 @@ What are you trying to do?
 
 [Example 4](./generated/004_selenium_webdriver.js.md): Build a testcase with Selenium WebDriver.
 
-Note: You can also browser the documentation in [side-by-side Docco format](./generated/docco/001_simple.js.html).
