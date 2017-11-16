@@ -1,11 +1,17 @@
 explain:
 	echo "This Makefile is for regenerating the documentation and example scripts. Most users shouldn't need to to run it."
 
+all:
+	npm install
+	$(MAKE) clean
+	$(MAKE) documentation
+
 documentation: docs/generated examples.js
 
 docs/generated:
 	mkdir -p ./docs/generated
-	npx docco ./examples.md/*.md --output ./docs/generated
+	cp ./examples.md/*.md ./docs/generated
+	npx docco ./docs/generated/*.md --output ./docs/generated
 
 examples.js:
 	mkdir -p ./examples.js
@@ -19,4 +25,4 @@ clean:
 	rm -rf ./docs/generated
 	rm -rf ./examples.js
 
-.PHONY: documentation clean
+.PHONY: all documentation clean
