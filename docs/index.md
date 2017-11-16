@@ -23,4 +23,4 @@ What are you trying to do?
 
 [Example 4](./generated/004_selenium_webdriver.js.md): Build a testcase with Selenium WebDriver.
 
-Note: You can also browser the documentation in [side-by-side Docco format](./generated/001_simple.html).
+Note: You can also browser the documentation in [side-by-side Docco format](./generated/docco/001_simple.js.html).
