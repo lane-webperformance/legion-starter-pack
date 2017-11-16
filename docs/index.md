@@ -15,11 +15,11 @@ documentation to help you succeed.
 What are you trying to do?
 ==========================
 
-[Example 1](./generated/001_simple.js.md): Create a basic testcase with HTTP GET requests.
+[Example 1](./generated/001_simple.js.html): Create a basic testcase with HTTP GET requests.
 
-[Example 2](./generated/002_ticket.js.md): Reuse a value from previous HTTP response in a later HTTP request.
+[Example 2](./generated/002_ticket.js.html): Reuse a value from previous HTTP response in a later HTTP request.
 
-[Example 3](./generated/003_login_dataset.js.md): Pick a unique value from a small list of values, and submit it in an HTTP request.
+[Example 3](./generated/003_login_dataset.js.html): Pick a unique value from a small list of values, and submit it in an HTTP request.
 
-[Example 4](./generated/004_selenium_webdriver.js.md): Build a testcase with Selenium WebDriver.
+[Example 4](./generated/004_selenium_webdriver.js.html): Build a testcase with Selenium WebDriver.
 
