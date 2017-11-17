@@ -1,3 +1,6 @@
+
+![Legion Logo (Red)](./logo-red.png "Legion Framework")
+
 Case Study: Load Testing a Raw TCP Service
 ==========================================
 

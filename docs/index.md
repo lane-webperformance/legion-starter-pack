@@ -1,3 +1,6 @@
+
+![Legion Logo (Red)](./logo-red.png "Legion Framework")
+
 Getting Started With Legion
 ===========================
 
@@ -11,6 +14,11 @@ clone and build this repository:
 	cd legion-starter-pack
 	npm install
 	node testcase.js
+
+This will run the test case with only one concurrent user. To run with many
+users (say, 50), try:
+
+	node testcase.js -n 50
 
 You can edit the `testcase.js` file to do anything you need. But before you do,
 the legion-starter-pack also contains examples and documentation to help you
