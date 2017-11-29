@@ -29,7 +29,7 @@ Background Information
 
 Current status [status](./status.md) of the project.
 
-Learn more about by [motivation](./motivation.md) for creating Legion.
+Learn more about my [motivation](./motivation.md) for creating Legion.
 
 A 2016 real-world [case study](./case_study.md) about using Legion to test a
 proprietary binary protocol.
