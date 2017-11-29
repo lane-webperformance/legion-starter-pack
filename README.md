@@ -1,6 +1,8 @@
 
 ![Legion Logo (Red)](./docs/logo-red.png "Legion Framework")
 
+[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/legion-starter-pack/Lobby#)
+
 legion-starter-pack
 ===================
 
