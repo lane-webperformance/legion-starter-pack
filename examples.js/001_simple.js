@@ -7,8 +7,8 @@ const delay = require('legion-io-delay');
 L.create()
   .using(obstacle)
   .withTestcase(L.of()
-      .chain(delay(0,1))
-      .chain(fetch.text('http://localhost:' + obstacle.port + '/'))
-      .chain(delay(0,1))
-      .chain(fetch.text('https://localhost:' + obstacle.port + '/')))
+    .chain(delay(0,1))
+    .chain(fetch.text('http://localhost:' + obstacle.port + '/'))
+    .chain(delay(0,1))
+    .chain(fetch.text('https://localhost:' + obstacle.port + '/')))
   .main();

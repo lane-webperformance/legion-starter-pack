@@ -4,8 +4,8 @@
   "description": "Run some example testcases, or use this as a seed to start writing your own.",
   "scripts": {
     "start": "node testcase.js",
-    "test": "eslint testcase.js ./examples/** && ./testcase.js && ./run-examples",
-    "clean": "rimraf node_modules"
+    "test": "eslint testcase.js ./examples.js/** && ./testcase.js && ./run-examples",
+    "clean": "rimraf examples.out; rimraf node_modules"
   },
   "author": "",
   "license": "ISC",
@@ -22,10 +22,12 @@
   },
   "devDependencies": {
     "docco": "^0.7.0",
-    "eslint": "^3.15.0",
+    "eslint": "^4.12.0",
     "eslint-plugin-promise": "^3.5.0",
+    "node-fetch": "^1.7.3",
     "nodemailer": "^4.4.0",
     "rimraf": "^2.5.4",
+    "sleep-promise": "^2.0.0",
     "voc": "^1.0.0"
   }
 }

@@ -40,22 +40,22 @@ Create a Legion load test using the Obstacle Course.
 We start the testcase with a small random delay.
 
 	  .withTestcase(L.of()
-	      .chain(delay(0,1))
+	    .chain(delay(0,1))
 
 Make the first request to the Obstacle Course. This will succeed.
 
-	      .chain(fetch.text('http://localhost:' + obstacle.port + '/'))
+	    .chain(fetch.text('http://localhost:' + obstacle.port + '/'))
 
 A second small random delay passes between the two HTTP requests.
 On average this should yield 0.5 seconds of delay per request, or
 two requests per second.
 
-	      .chain(delay(0,1))
+	    .chain(delay(0,1))
 
 Make the second request to the Obstacle Course. HTTPS is supported in Legion,
 but not on the Obstacle Course server specifically, so this will fail.
 
-	      .chain(fetch.text('https://localhost:' + obstacle.port + '/')))
+	    .chain(fetch.text('https://localhost:' + obstacle.port + '/')))
 
 Finally, we call Legion's default main method. We can run this with multiple
 concurrent users by specifying the -n flag.

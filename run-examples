@@ -1,18 +1,30 @@
 #!/bin/bash
 
-node ./examples.js/001_simple.js "$@" && exit 1 # This test is expected to generate errors.
-echo "Note: the previous test is expected to generate errors."
-echo "Ok."
-sleep 5
+mkdir -p examples.out
 
-node ./examples.js/002_ticket.js "$@" || exit 2
-echo "Ok."
-sleep 5
+node ./examples.js/001_simple.js > examples.out/001.out 2> examples.out/001.err "$@" && exit 1 # This test is expected to generate errors.
+echo "Note: Test #1 is expected to generate errors (see examples.out/001.out)."
+echo "001 Ok."
+sleep 1
 
-node ./examples.js/003_login_dataset.js "$@" || exit 3
-echo "Ok."
-sleep 5
+node ./examples.js/002_ticket.js "$@" > examples.out/002.out 2> examples.out/002.err || exit 2
+echo "002 Ok."
+sleep 1
 
-node ./examples.js/004_selenium_webdriver.js "$@" || exit 4
-echo "Ok."
-sleep 5
+node ./examples.js/003_login_dataset.js "$@" > examples.out/003.out 2> examples.out/003.err || exit 3
+echo "003 Ok."
+sleep 1
+
+if [ `command -v geckodriver` ]; then
+  node ./examples.js/004_selenium_webdriver.js "$@" > examples.out/004.out 2> examples.out/004.err || exit 4
+  echo "004 Ok."
+  sleep 1
+else
+  echo "004: No geckodriver found. Skipping the selenium webdriver test on the assumption that it will fail."
+fi
+
+node ./examples.js/005_sections.js "$@" > examples.out/005.out 2> examples.out/005.err || exit 5
+echo "005 Ok."
+sleep 1
+
+echo "All tests passed (or skipped)."

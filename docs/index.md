@@ -45,3 +45,5 @@ What are you trying to do?
 
 [Example 4](./generated/004_selenium_webdriver.js.html): Build a test case with Selenium WebDriver.
 
+[Example 5](./generated/005_sections.js.html): Measure the performance of ordinary async-await style programs using named sections.
+
