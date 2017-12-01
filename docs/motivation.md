@@ -6,9 +6,23 @@ Legion is a distributed, protocol-agnostic load testing tool.
 Why does it exist?
 ==================
 
-Legion's purpose is to make hard problems easy. There are many load testing
-tools on the market, but my goal with Legion is simply to solve all of the most
-difficult problems I've encountered in my seven years in this industry.
+I wanted to create a tool that would solve the most challenging problems I've
+encountered in my seven years of helping clients improve the performance,
+capacity, and risk exposure of their network-enabled applications.
+
+Those problems include:
+
+(1) Complexity of the use case or test design,
+
+(2) Unusual or proprietary protocols,
+
+(3) Requirements to scale beyond one million concurrent users,
+
+(4) Difficulty understanding or trusting the results of a test, and,
+
+(5) Difficulties with training new people on a given tool.
+
+My hope is that Legion will eventually address all five of these problem areas.
 
 What are Legion's advantages?
 =============================
@@ -32,24 +46,25 @@ semantics of Legion's inter-process communication makes them possible.
 Scriptable
 ----------
 
-Legion is a Node.js library written in vanilla JavaScript. Legion is
-designed to leverage the wealth of publicly available JavaScript software to
-test almost any kind of network-enabled service you can imagine.
+Legion is a Node.js library written in vanilla JavaScript. Part of the intent
+of Legion is to leverage the wealth of publicly available JavaScript software
+to test almost any kind of network-enabled service you can imagine.
 
 JavaScript today is both expressive and easy to learn, with mature tooling, and
 works smoothly as a functional, object-oriented, or just an everyday
 get-it-done scripting language, depending on your need.
 
 We can assume that most organizations that develop network-enabled services
-employ at least a few developers with JavaScript experience. If we made any
-other choice of platform we would not have this golden triad of capabilities:
-broad library support, excelent software engineering, and accessability for
-end-users.
+employ at least a few developers with JavaScript experience.
+
+If we made any other choice of platform we would not have this golden triad of
+capabilities: broad library support, versatile software engineering, and
+accessibility for end-users.
 
 Adaptable
 ---------
 
-Legion is designed as a family of loosly-coupled libraries and tools. Support
+Legion is designed as a family of loosely-coupled libraries and tools. Support
 for building test scripts is separate from the metrics reporting format, which
 is again separate from command-and-control, and so on.
 
@@ -72,11 +87,10 @@ Future Plans
 
 There are two major tasks remaining on Legion's long-term plan:
 
-First, we need an excelent tool to capture and replay HTTP and HTTP2 testcases.
+First, we need an excellent tool to capture and replay HTTP and HTTP2 test cases.
 Legion obviously supports the HTTP protocol, but scripting is entirely by hand.
 This is not competitive with other tools.
 
-Second, although Legion already makes many problems much easier they would
+Second, although Legion already makes many problems much easier then they would
 otherwise be, only software developers can use it. We need a compelling GUI
-tool that will keep easy problems easy.
-
+tool that will also make easy problems easy.
