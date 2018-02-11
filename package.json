@@ -12,13 +12,13 @@
   "dependencies": {
     "command-line-args": "^5.0.2",
     "command-line-usage": "^4.0.0",
-    "legion": "https://github.com/lane-webperformance/legion#v0.0.51",
-    "legion-capture": "https://github.com/lane-webperformance/legion-capture#v0.0.51",
-    "legion-control": "https://github.com/lane-webperformance/legion-control#v0.0.51",
-    "legion-io-delay": "https://github.com/lane-webperformance/legion-io-delay#v0.0.51",
-    "legion-io-fetch": "https://github.com/lane-webperformance/legion-io-fetch#v0.0.51",
-    "legion-obstacle-course": "https://github.com/lane-webperformance/legion-obstacle-course#v0.0.51",
-    "legion-selenium-webdriver": "https://github.com/lane-webperformance/legion-selenium-webdriver#v0.0.51"
+    "legion": "https://github.com/lane-webperformance/legion#v0.0.52",
+    "legion-capture": "https://github.com/lane-webperformance/legion-capture#v0.0.52",
+    "legion-control": "https://github.com/lane-webperformance/legion-control#v0.0.52",
+    "legion-io-delay": "https://github.com/lane-webperformance/legion-io-delay#v0.0.52",
+    "legion-io-fetch": "https://github.com/lane-webperformance/legion-io-fetch#v0.0.52",
+    "legion-obstacle-course": "https://github.com/lane-webperformance/legion-obstacle-course#v0.0.52",
+    "legion-selenium-webdriver": "https://github.com/lane-webperformance/legion-selenium-webdriver#v0.0.52"
   },
   "devDependencies": {
     "docco": "^0.8.0",
