@@ -1,6 +1,6 @@
 {
   "name": "legion-starter-pack",
-  "version": "0.0.51",
+  "version": "0.0.52",
   "description": "Run some example testcases, or use this as a seed to start writing your own.",
   "scripts": {
     "start": "node testcase.js",
