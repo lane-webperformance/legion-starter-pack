@@ -2,7 +2,6 @@ explain:
 	echo "This Makefile is for regenerating the documentation and example scripts. Most users shouldn't need to to run it."
 
 all:
-	npm install
 	$(MAKE) clean
 	$(MAKE) documentation
 

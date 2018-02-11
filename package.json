@@ -4,7 +4,7 @@
   "description": "Run some example testcases, or use this as a seed to start writing your own.",
   "scripts": {
     "start": "node testcase.js",
-    "test": "eslint testcase.js ./examples.js/** && ./testcase.js && ./run-examples",
+    "test": "eslint testcase.js ./examples.js && ./testcase.js && ./run-examples",
     "clean": "rimraf examples.out; rimraf node_modules"
   },
   "author": "",
@@ -12,13 +12,13 @@
   "dependencies": {
     "command-line-args": "^4.0.1",
     "command-line-usage": "^4.0.0",
-    "legion": "https://github.com/lane-webperformance/legion#v0.0.47",
-    "legion-capture": "https://github.com/lane-webperformance/legion-capture#v0.0.47",
-    "legion-control": "https://github.com/lane-webperformance/legion-control#v0.0.47",
-    "legion-io-delay": "https://github.com/lane-webperformance/legion-io-delay#v0.0.47",
-    "legion-io-fetch": "https://github.com/lane-webperformance/legion-io-fetch#v0.0.47",
-    "legion-obstacle-course": "https://github.com/lane-webperformance/legion-obstacle-course#v0.0.47",
-    "legion-selenium-webdriver": "https://github.com/lane-webperformance/legion-selenium-webdriver#v0.0.47"
+    "legion": "https://github.com/lane-webperformance/legion#v0.0.50",
+    "legion-capture": "https://github.com/lane-webperformance/legion-capture#v0.0.50",
+    "legion-control": "https://github.com/lane-webperformance/legion-control#v0.0.50",
+    "legion-io-delay": "https://github.com/lane-webperformance/legion-io-delay#v0.0.50",
+    "legion-io-fetch": "https://github.com/lane-webperformance/legion-io-fetch#v0.0.50",
+    "legion-obstacle-course": "https://github.com/lane-webperformance/legion-obstacle-course#v0.0.50",
+    "legion-selenium-webdriver": "https://github.com/lane-webperformance/legion-selenium-webdriver#v0.0.50"
   },
   "devDependencies": {
     "docco": "^0.7.0",
@@ -28,6 +28,7 @@
     "nodemailer": "^4.4.0",
     "rimraf": "^2.5.4",
     "sleep-promise": "^2.0.0",
+    "smtp-server": "^3.4.1",
     "voc": "^1.0.0"
   }
 }

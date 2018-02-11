@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Legion: Building SMTP Testcases in "Easy Mode" with Sections</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
+              
+                
+                <a class="source" href="001_simple.js.html">
+                  001_simple.js.md
+                </a>
+              
+                
+                <a class="source" href="002_ticket.js.html">
+                  002_ticket.js.md
+                </a>
+              
+                
+                <a class="source" href="003_login_dataset.js.html">
+                  003_login_dataset.js.md
+                </a>
+              
+                
+                <a class="source" href="004_selenium_webdriver.js.html">
+                  004_selenium_webdriver.js.md
+                </a>
+              
+                
+                <a class="source" href="005_sections.js.html">
+                  005_sections.js.md
+                </a>
+              
+                
+                <a class="source" href="006_smtp.js.html">
+                  006_smtp.js.md
+                </a>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-meta">#!/usr/bin/env node</span>
+<span class="hljs-meta">'use strict'</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <h1 id="legion-building-smtp-testcases-in-easy-mode-with-sections">Legion: Building SMTP Testcases in “Easy Mode” with Sections</h1>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Last updated: December 2017</p>
+<p>This example demonstrates how you can use Legion to load test an SMTP (email)
+server. At the time of this writing, Legion doesn’t include any special SMTP
+support, but we can implement the testcase we need using vanilla JavaScript and
+a popular SMTP client.</p>
+<h2 id="setup">Setup</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>First, we’ll use
+<a href="https://nodemailer.com/extras/smtp-connection/">smtp-connection</a> to set up,
+well, an SMTP connection. Although this example won’t use the obstacle
+course, we can rely on the obstacle course to provide an appropriate
+port number.</p>
+<p>Unfortunately, as of the time of this writing smtp-connection doesn’t support
+promises, so we use util.promisify to hide away the callbacks.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">const</span> SMTPConnection = <span class="hljs-built_in">require</span>(<span class="hljs-string">'nodemailer/lib/smtp-connection'</span>);
+<span class="hljs-keyword">const</span> port = <span class="hljs-built_in">require</span>(<span class="hljs-string">'legion-obstacle-course'</span>).port;
+<span class="hljs-keyword">const</span> util = <span class="hljs-built_in">require</span>(<span class="hljs-string">'util'</span>);
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setup</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> connection = <span class="hljs-keyword">new</span> SMTPConnection({
+    <span class="hljs-attr">host</span>: <span class="hljs-string">'localhost'</span>,
+    <span class="hljs-attr">port</span>: port,
+    <span class="hljs-attr">tls</span>: { <span class="hljs-attr">rejectUnauthorized</span>: <span class="hljs-literal">false</span> }
+  });
+
+  <span class="hljs-keyword">await</span> util.promisify(<span class="hljs-function"><span class="hljs-params">callback</span> =&gt;</span> connection.connect(callback))();
+
+  <span class="hljs-keyword">return</span> connection;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <h2 id="sending-mail">Sending Mail</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Second, we need a function to send the SMTP message.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">send</span>(<span class="hljs-params">connection, from, to, message</span>) </span>{
+  <span class="hljs-keyword">return</span> util.promisify(<span class="hljs-function"><span class="hljs-params">callback</span> =&gt;</span> connection.send({ <span class="hljs-keyword">from</span>, to }, message, callback))();
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <h2 id="putting-it-all-together">Putting it all together</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>This is all it takes to test sending email:</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">const</span> L = <span class="hljs-built_in">require</span>(<span class="hljs-string">'legion'</span>);
+
+L.create()
+  .withBeforeTestAction(startTestServer)
+  .withAfterTestAction(stopTestServer)
+  .withTestcase(L.of().chain(<span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> connection = <span class="hljs-keyword">await</span> setup();
+    <span class="hljs-keyword">await</span> send(connection, <span class="hljs-string">'alice@example.com'</span>, <span class="hljs-string">'bob@example.com'</span>, <span class="hljs-string">'hello, bob'</span>);
+    connection.quit();
+  }))
+
+  .main();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <h2 id="the-test-server">The Test Server</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>You’ll notice the ‘startTestServer’ and ‘stopTestServer’ calls in the previous section. We need an actual SMTP server running on localhost on the port we’ve selected. For our purposes the convenient way to provide one is to launch it as part of this test script.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startTestServer</span>(<span class="hljs-params">state</span>) </span>{
+  <span class="hljs-keyword">const</span> SMTPServer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'smtp-server'</span>).SMTPServer;
+  
+  <span class="hljs-keyword">const</span> server = <span class="hljs-keyword">new</span> SMTPServer({ <span class="hljs-attr">authOptional</span>: <span class="hljs-literal">true</span> }).listen(port);
+
+  <span class="hljs-keyword">return</span> state.withService(<span class="hljs-string">'custom-smtp-server'</span>, server);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stopTestServer</span>(<span class="hljs-params">state</span>) </span>{
+  state.getService(<span class="hljs-string">'custom-smtp-server'</span>).close();
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <h2 id="results">Results</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>((Screenshot showing number of successful events.))</p>
+
+            </div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
