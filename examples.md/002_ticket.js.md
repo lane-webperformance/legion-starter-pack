@@ -15,7 +15,7 @@ by submitting that ID.
 This example demonstrates the ability to extract a value from
 a previous response and then submit it in a later request.
 
-	const obstacle = require('legion-obstacle-course');
+	const obstacle = require('legion-obstacle-course').http;
 	const L = require('legion');
 	const rest = require('legion-io-fetch').rest;
 	const delay = require('legion-io-delay');

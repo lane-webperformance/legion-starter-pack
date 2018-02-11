@@ -23,7 +23,7 @@ Setup
 
 As with other examples, we'll start by loading up the obstacle course. But this time we'll import the original node-fetch implementation of the WHATWG fetch API.
 
-	const obstacle = require('legion-obstacle-course');
+	const obstacle = require('legion-obstacle-course').http;
 	const L = require('legion');
 	const fetch = require('node-fetch');
 

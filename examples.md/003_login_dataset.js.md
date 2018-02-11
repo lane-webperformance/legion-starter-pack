@@ -23,7 +23,7 @@ server will not re-use the same credential.
 Because there are only 9 login credentials in the data set,
 this testcase will fail if run with more then 9 users.
 
-	const obstacle = require('legion-obstacle-course');
+	const obstacle = require('legion-obstacle-course').http;
 	const L = require('legion');
 	const querystring = require('querystring');
 	const rest = require('legion-io-fetch').rest;

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-const obstacle = require('legion-obstacle-course');
+const obstacle = require('legion-obstacle-course').http;
 const L = require('legion');
 const rest = require('legion-io-fetch').rest;
 const delay = require('legion-io-delay');

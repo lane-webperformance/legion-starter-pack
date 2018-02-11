@@ -2041,16 +2041,16 @@ lazy@~1.0.11:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/lazy/-/lazy-1.0.11.tgz#daa068206282542c088288e975c297c1ae77b690"
 
-"legion-capture@https://github.com/lane-webperformance/legion-capture#v0.0.50":
-  version "0.0.50"
-  resolved "https://github.com/lane-webperformance/legion-capture#86ab90218b7c2c77913f5d86f6944491c183d574"
+"legion-capture@https://github.com/lane-webperformance/legion-capture#v0.0.51":
+  version "0.0.51"
+  resolved "https://github.com/lane-webperformance/legion-capture#fad911c5b1127cf80ce997e5aef411c5ed3b5cc8"
   dependencies:
     body-parser "^1.15.1"
     express "^4.13.4"
     forever "^0.15.2"
     fs-extra "^4.0.1"
     jsonschema "^1.2.0"
-    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.50"
+    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.51"
     node-fetch "^1.5.3"
     promise-delay "^2.1.0"
     uuid "^3.1.0"
@@ -2060,9 +2060,9 @@ lazy@~1.0.11:
     pouchdb-server "^2.3.7"
     pouchdb-upsert "^2.2.0"
 
-"legion-control@https://github.com/lane-webperformance/legion-control#v0.0.50":
-  version "0.0.50"
-  resolved "https://github.com/lane-webperformance/legion-control#a29d98400b623dc4bbf400f4333e2d45e0a361d4"
+"legion-control@https://github.com/lane-webperformance/legion-control#v0.0.51":
+  version "0.0.51"
+  resolved "https://github.com/lane-webperformance/legion-control#b3fe2b832dd1b369ccaff17099123379f7df140f"
   dependencies:
     bluebird "^3.5.0"
     body-parser "^1.16.1"
@@ -2071,91 +2071,92 @@ lazy@~1.0.11:
     node-fetch "^1.7.1"
     promise-delay "^2.1.0"
 
-"legion-core@https://github.com/lane-webperformance/legion-core#v0.0.50":
-  version "0.0.50"
-  resolved "https://github.com/lane-webperformance/legion-core#08d52c32fe251e1a66a835316bf3ebc28571118e"
+"legion-core@https://github.com/lane-webperformance/legion-core#v0.0.51":
+  version "0.0.51"
+  resolved "https://github.com/lane-webperformance/legion-core#db93b53a16829dd79fe6d0a026d29b5fb95ae48b"
   dependencies:
-    legion-control "https://github.com/lane-webperformance/legion-control#v0.0.50"
-    legion-io "https://github.com/lane-webperformance/legion-io#v0.0.50"
-    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.50"
+    legion-control "https://github.com/lane-webperformance/legion-control#v0.0.51"
+    legion-io "https://github.com/lane-webperformance/legion-io#v0.0.51"
+    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.51"
     ramda "^0.23.0"
     uuid "^3.0.1"
 
-"legion-instrument@https://github.com/lane-webperformance/legion-instrument#v0.0.50":
-  version "0.0.50"
-  resolved "https://github.com/lane-webperformance/legion-instrument#ad5499018cd2cdbe2911e46599a72487ee4f83d6"
+"legion-instrument@https://github.com/lane-webperformance/legion-instrument#v0.0.51":
+  version "0.0.51"
+  resolved "https://github.com/lane-webperformance/legion-instrument#d26ae49dbfe02c4b8f90499456be0b6a35c48918"
   dependencies:
-    legion-io "https://github.com/lane-webperformance/legion-io#v0.0.50"
-    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.50"
+    legion-io "https://github.com/lane-webperformance/legion-io#v0.0.51"
+    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.51"
 
-"legion-io-delay@https://github.com/lane-webperformance/legion-io-delay#v0.0.50":
-  version "0.0.50"
-  resolved "https://github.com/lane-webperformance/legion-io-delay#4a4ba1d25d0030f053e2019e09216461825deaa7"
+"legion-io-delay@https://github.com/lane-webperformance/legion-io-delay#v0.0.51":
+  version "0.0.51"
+  resolved "https://github.com/lane-webperformance/legion-io-delay#04f9d7419e552fb409d4ae1b0712be4504eeac7e"
   dependencies:
-    legion-core "https://github.com/lane-webperformance/legion-core#v0.0.50"
-    legion-io "https://github.com/lane-webperformance/legion-io#v0.0.50"
-    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.50"
+    legion-core "https://github.com/lane-webperformance/legion-core#v0.0.51"
+    legion-io "https://github.com/lane-webperformance/legion-io#v0.0.51"
+    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.51"
 
-"legion-io-fetch@https://github.com/lane-webperformance/legion-io-fetch#v0.0.50":
-  version "0.0.50"
-  resolved "https://github.com/lane-webperformance/legion-io-fetch#35ef76ca55f1e2e655844bb626fb48f51e6ddb84"
+"legion-io-fetch@https://github.com/lane-webperformance/legion-io-fetch#v0.0.51":
+  version "0.0.51"
+  resolved "https://github.com/lane-webperformance/legion-io-fetch#85594662938999d482962997fcc5d946dcc3f407"
   dependencies:
-    legion-core "https://github.com/lane-webperformance/legion-core#v0.0.50"
-    legion-instrument "https://github.com/lane-webperformance/legion-instrument#v0.0.50"
-    legion-io "https://github.com/lane-webperformance/legion-io#v0.0.50"
-    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.50"
+    legion-core "https://github.com/lane-webperformance/legion-core#v0.0.51"
+    legion-instrument "https://github.com/lane-webperformance/legion-instrument#v0.0.51"
+    legion-io "https://github.com/lane-webperformance/legion-io#v0.0.51"
+    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.51"
     node-fetch "^1.5.1"
 
-"legion-io-proxy@https://github.com/lane-webperformance/legion-io-proxy#v0.0.50":
-  version "0.0.50"
-  resolved "https://github.com/lane-webperformance/legion-io-proxy#a806ca1c4c4978796839f732c1b863affa112bcd"
+"legion-io-proxy@https://github.com/lane-webperformance/legion-io-proxy#v0.0.51":
+  version "0.0.51"
+  resolved "https://github.com/lane-webperformance/legion-io-proxy#6ed9134d9fac798f3b0d7a96e2373a0d0a90b1a7"
   dependencies:
-    legion-core "https://github.com/lane-webperformance/legion-core#v0.0.50"
-    legion-instrument "https://github.com/lane-webperformance/legion-instrument#v0.0.50"
-    legion-io "https://github.com/lane-webperformance/legion-io#v0.0.50"
-    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.50"
+    legion-core "https://github.com/lane-webperformance/legion-core#v0.0.51"
+    legion-instrument "https://github.com/lane-webperformance/legion-instrument#v0.0.51"
+    legion-io "https://github.com/lane-webperformance/legion-io#v0.0.51"
+    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.51"
 
-"legion-io@https://github.com/lane-webperformance/legion-io#v0.0.50":
-  version "0.0.50"
-  resolved "https://github.com/lane-webperformance/legion-io#2ee287dadac43e8d0d7e4c2a10b7c1f878e6e83d"
+"legion-io@https://github.com/lane-webperformance/legion-io#v0.0.51":
+  version "0.0.51"
+  resolved "https://github.com/lane-webperformance/legion-io#a0df41899e66637e528cdfc03f50a5f22e505ad7"
 
-"legion-metrics@https://github.com/lane-webperformance/legion-metrics#v0.0.50":
-  version "0.0.50"
-  resolved "https://github.com/lane-webperformance/legion-metrics#58fd00f950bc21acf6ed1430fa2549478bc7e30e"
+"legion-metrics@https://github.com/lane-webperformance/legion-metrics#v0.0.51":
+  version "0.0.51"
+  resolved "https://github.com/lane-webperformance/legion-metrics#676dfbc407891df871f512ac44a5d22baf982a1f"
   dependencies:
     csv-stringify "^2.0.0"
     immutable "^3.8.1"
     ramda "^0.23.0"
 
-"legion-obstacle-course@https://github.com/lane-webperformance/legion-obstacle-course#v0.0.50":
-  version "0.0.50"
-  resolved "https://github.com/lane-webperformance/legion-obstacle-course#490bb464184eca0e583345fb6609913e3afee0cf"
+"legion-obstacle-course@https://github.com/lane-webperformance/legion-obstacle-course#v0.0.51":
+  version "0.0.51"
+  resolved "https://github.com/lane-webperformance/legion-obstacle-course#68afbde7e9d144811b9bbf55ac68113b3c6e163d"
   dependencies:
     body-parser "^1.16.0"
     express "^4.14.1"
+    promise-socket "^3.0.0"
 
-"legion-selenium-webdriver@https://github.com/lane-webperformance/legion-selenium-webdriver#v0.0.50":
-  version "0.0.50"
-  resolved "https://github.com/lane-webperformance/legion-selenium-webdriver#1aca1b86cc5fa9bcd8d2e7c67bc3f7b0eb6e3223"
+"legion-selenium-webdriver@https://github.com/lane-webperformance/legion-selenium-webdriver#v0.0.51":
+  version "0.0.51"
+  resolved "https://github.com/lane-webperformance/legion-selenium-webdriver#1dcf0b79b96b4dc86560810ea560939b0285d0c8"
   dependencies:
-    legion-instrument "https://github.com/lane-webperformance/legion-instrument#v0.0.50"
-    legion-io "https://github.com/lane-webperformance/legion-io#v0.0.50"
-    legion-io-proxy "https://github.com/lane-webperformance/legion-io-proxy#v0.0.50"
-    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.50"
+    legion-instrument "https://github.com/lane-webperformance/legion-instrument#v0.0.51"
+    legion-io "https://github.com/lane-webperformance/legion-io#v0.0.51"
+    legion-io-proxy "https://github.com/lane-webperformance/legion-io-proxy#v0.0.51"
+    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.51"
     selenium-webdriver "^3.5.0"
 
-"legion@https://github.com/lane-webperformance/legion#v0.0.50":
-  version "0.0.50"
-  resolved "https://github.com/lane-webperformance/legion#a48b81010e8836c587bda5085f605fddadb07959"
+"legion@https://github.com/lane-webperformance/legion#v0.0.51":
+  version "0.0.51"
+  resolved "https://github.com/lane-webperformance/legion#fe79801bf1d9cb26962ab8e69a39a741a01b18e8"
   dependencies:
     command-line-args "^4.0.1"
     command-line-usage "^4.0.0"
-    legion-capture "https://github.com/lane-webperformance/legion-capture#v0.0.50"
-    legion-control "https://github.com/lane-webperformance/legion-control#v0.0.50"
-    legion-core "https://github.com/lane-webperformance/legion-core#v0.0.50"
-    legion-instrument "https://github.com/lane-webperformance/legion-instrument#v0.0.50"
-    legion-io "https://github.com/lane-webperformance/legion-io#v0.0.50"
-    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.50"
+    legion-capture "https://github.com/lane-webperformance/legion-capture#v0.0.51"
+    legion-control "https://github.com/lane-webperformance/legion-control#v0.0.51"
+    legion-core "https://github.com/lane-webperformance/legion-core#v0.0.51"
+    legion-instrument "https://github.com/lane-webperformance/legion-instrument#v0.0.51"
+    legion-io "https://github.com/lane-webperformance/legion-io#v0.0.51"
+    legion-metrics "https://github.com/lane-webperformance/legion-metrics#v0.0.51"
     ramda "^0.23.0"
     uuid "^3.0.1"
 
@@ -3362,9 +3363,30 @@ promise-delay@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/promise-delay/-/promise-delay-2.1.0.tgz#823f4a5189a996ce574be9111bd6551457cdf035"
 
+promise-duplex@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/promise-duplex/-/promise-duplex-3.0.2.tgz#caec677d41d96c18c63edd37422da6cdb99246e0"
+  dependencies:
+    promise-readable "^3.1.3"
+    promise-writable "^3.1.1"
+
 promise-nodify@^1.0.0, promise-nodify@^1.0.1, promise-nodify@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/promise-nodify/-/promise-nodify-1.0.2.tgz#0d0fb143c33400b0061b47e581257557047d4c5a"
+
+promise-readable@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/promise-readable/-/promise-readable-3.1.3.tgz#bc9722b513cd23edea614c0cad57b1b01b2eb504"
+
+promise-socket@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/promise-socket/-/promise-socket-3.0.1.tgz#0fcecedb428c50a384322bb4478b84c22fa60d72"
+  dependencies:
+    promise-duplex "^3.0.2"
+
+promise-writable@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/promise-writable/-/promise-writable-3.1.1.tgz#447865c704d7fc2e70390ccbd5f2ac65e0430516"
 
 prompt@0.2.14:
   version "0.2.14"
@@ -3692,7 +3714,7 @@ revalidator@0.1.x:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/revalidator/-/revalidator-0.1.8.tgz#fece61bfa0c1b52a206bd6b18198184bdd523a3b"
 
-rimraf@2, rimraf@2.x.x, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.5.4, rimraf@^2.6.1:
+rimraf@2, rimraf@2.x.x, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.2.tgz#2ed8150d24a16ea8651e6d6ef0f47c4158ce7a36"
   dependencies:

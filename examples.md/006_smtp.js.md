@@ -24,7 +24,7 @@ Unfortunately, as of the time of this writing smtp-connection doesn't support
 promises, so we use util.promisify to hide away the callbacks.
 
 	const SMTPConnection = require('nodemailer/lib/smtp-connection');
-	const port = require('legion-obstacle-course').port;
+	const port = require('legion-obstacle-course').tcp.echo.port;
 	const util = require('util');
 
 	async function setup() {

@@ -1,11 +1,22 @@
-explain:
-	echo "This Makefile is for regenerating the documentation and example scripts. Most users shouldn't need to to run it."
-
-all:
-	$(MAKE) clean
+all: build
+	$(MAKE) clean-documentation
 	$(MAKE) documentation
 
-documentation: docs/generated examples.js
+build:
+	yarn
+
+clean:
+	yarn add rimraf --def
+	yarn run clean
+
+test: build documentation
+	yarn test
+
+documentation: build docs/generated examples.js
+
+clean-documentation:
+	rm -rf ./docs/generated
+	rm -rf ./examples.js
 
 docs/generated:
 	mkdir -p ./docs/generated
@@ -19,8 +30,4 @@ examples.js/%: examples.md/%.md
 	npx voc $< > $@
 	chmod u+x $@
 
-clean:
-	rm -rf ./docs/generated
-	rm -rf ./examples.js
-
-.PHONY: all documentation clean
+.PHONY: all clean clean-documentation documentation build test

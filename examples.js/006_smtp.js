@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const SMTPConnection = require('nodemailer/lib/smtp-connection');
-const port = require('legion-obstacle-course').port;
+const port = require('legion-obstacle-course').tcp.echo.port;
 const util = require('util');
 
 async function setup() {

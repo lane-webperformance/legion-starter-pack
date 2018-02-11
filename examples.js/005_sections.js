@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-const obstacle = require('legion-obstacle-course');
+const obstacle = require('legion-obstacle-course').http;
 const L = require('legion');
 const fetch = require('node-fetch');
 L.create()

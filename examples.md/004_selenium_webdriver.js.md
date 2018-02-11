@@ -17,7 +17,7 @@ Everything inside the chain will have access to the vanilla Driver instance.
 
 	const L = require('legion');
 	const delay = require('legion-io-delay');
-	const obstacle = require('legion-obstacle-course');
+	const obstacle = require('legion-obstacle-course').http;
 
 Importing the binding looks very similary to importing vanilla webdriver:
 

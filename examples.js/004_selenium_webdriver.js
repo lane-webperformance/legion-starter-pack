@@ -2,7 +2,7 @@
 'use strict';
 const L = require('legion');
 const delay = require('legion-io-delay');
-const obstacle = require('legion-obstacle-course');
+const obstacle = require('legion-obstacle-course').http;
 const webdriver = require('legion-selenium-webdriver');
 
 const By = webdriver.By;
