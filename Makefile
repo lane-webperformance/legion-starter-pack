@@ -1,18 +1,21 @@
-all: build
-	$(MAKE) clean-documentation
-	$(MAKE) documentation
+all: test
 
 build:
 	yarn
+	$(MAKE) documentation
 
 clean:
-	yarn add rimraf --def
+	yarn add rimraf --dev
 	yarn run clean
 
-test: build documentation
+test: build
 	yarn test
 
-documentation: build docs/generated examples.js
+documentation:
+	yarn
+	$(MAKE) clean-documentation
+	$(MAKE) docs/generated
+	$(MAKE) examples.js
 
 clean-documentation:
 	rm -rf ./docs/generated
@@ -20,7 +23,7 @@ clean-documentation:
 
 docs/generated:
 	mkdir -p ./docs/generated
-	npx docco ./examples.md/*.md --output ./docs/generated
+	cd examples.md && npx docco ./*.md --output ../docs/generated
 
 examples.js:
 	mkdir -p ./examples.js

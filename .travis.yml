@@ -1,5 +1,14 @@
 # Policy is to target latest LTS (long term support) and current version of node.js.
 
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t legion .
+  - docker run -it legion
+
 language: node_js
 node_js:
   - "node"
