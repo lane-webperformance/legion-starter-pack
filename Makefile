@@ -1,4 +1,4 @@
-all: test
+all: build
 
 build:
 	yarn
@@ -8,7 +8,7 @@ clean:
 	yarn add rimraf --dev
 	yarn run clean
 
-test: build
+test:
 	yarn test
 
 documentation:
