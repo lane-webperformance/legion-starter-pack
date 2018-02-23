@@ -8,8 +8,3 @@ services:
 before_install:
   - docker build -t legion .
   - docker run -it legion
-
-language: node_js
-node_js:
-  - "node"
-  - "8"  # LTS until April 2019
